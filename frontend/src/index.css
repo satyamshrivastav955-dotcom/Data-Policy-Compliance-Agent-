@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  --bg-base: #0a0e14;
+  --bg-surface: #0d1219;
+  --bg-elevated: #1a2235;
+  --border: #1e2535;
+  --text-primary: #e2e8f0;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --accent-teal: #1d9e75;
+  --accent-teal-bg: #0f6e5618;
+  --accent-teal-border: #1d9e7540;
+  --red: #c8001a;
+  --red-light: #ff6b6b;
+  --amber: #ef9f27;
+  --blue: #378add;
+}
+
+body {
+  @apply bg-bg-base text-text-primary font-sans antialiased;
+}
+
+.card {
+  @apply bg-bg-surface border border-border rounded-card shadow-card;
+  transition: transform 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-2px);
+  border-color: theme("colors.border.bright");
+}
+
+.skeleton {
+  @apply relative overflow-hidden bg-bg-elevated rounded-card;
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0),
+    rgba(148, 163, 184, 0.15),
+    rgba(255, 255, 255, 0)
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.6s linear infinite;
+}
+
